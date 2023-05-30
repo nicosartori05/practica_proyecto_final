@@ -6,8 +6,8 @@ import Register from '../views/Register.vue'
 import Login from '../views/Login.vue'
 
 const routes = [
-    {path:"/", component: Splash},
-    {path:"/home", component: Home},
+    //{path:"/", component: Splash},
+    {path:"/", component: Home},
     {path:"/register", component: Register},
     {path:"/login", component: Login},
 ]
