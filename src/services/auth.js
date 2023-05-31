@@ -1,5 +1,5 @@
 import { auth } from "./firebase.js";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { createUser } from "./users";
 
 export async function register({
@@ -48,6 +48,13 @@ export async function register({
   }
 }
 
+/**
+ * Inicia sesión.
+ *
+ * @param {string} email
+ * @param {string} password
+ * @return {Promise<{id: string, email: string}>}
+ */
 export async function login({ email, password }) {
   try {
     const credentials = await signInWithEmailAndPassword(auth, email, password);

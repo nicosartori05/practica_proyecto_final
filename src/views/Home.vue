@@ -1,10 +1,10 @@
 <script setup>
-import navbar from '../components/navbar.vue';
-import cardsHome from '../components/cardsHome.vue';
+import Nav from '../components/Nav.vue';
+import ButtonHome from '../components/ButtonHome.vue';
 </script>
 
 <template>
-    <navbar />
+    
 
     <section>
         <div class="row align-items-center mb-3">
@@ -25,24 +25,24 @@ import cardsHome from '../components/cardsHome.vue';
         </div>
     </section>
 
-    <section id="CardsHome">
+    <section id="CardsHome" class="h-100">
         <div class="row d-flex justify-content-between">
             <div class="col-3">
-                <cardsHome route="home" icon="hogar.png"/>
+                <ButtonHome route="Home" icon="hogar.png"/>
             </div>
             <div class="col-3">
-                <cardsHome route="feed" icon="red-social.png"/>
+                <ButtonHome route="Feed" icon="red-social.png"/>
             </div>
             <div class="col-3">
-                <cardsHome route="partidos" icon="pelota.png"/>
+                <ButtonHome route="Partidos" icon="pelota.png"/>
             </div>
             <div class="col-3">
-                <cardsHome route="red" icon="usuarios.png"/>
+                <ButtonHome route="Red" icon="usuarios.png"/>
             </div>
         </div>
     </section>
 
-    <section id="proximosPartidos">
+    <section id="proximosPartidos" class="h-100">
         <div class="row mb-3">
             <div class="col-10">
                 <h2 class="text-start h3"><span class="text-decoration-underline">Próximos</span> partidos</h2>
@@ -53,8 +53,8 @@ import cardsHome from '../components/cardsHome.vue';
                 </router-link>    
             </div>
         </div>
-        <div class="row">
-            <div class="card">
+        <div class="row px-3">
+            <div class="card p-3">
                 <div class="card-body">
                     <div class="row mb-3">
                         <div class="col-10">
@@ -94,7 +94,7 @@ import cardsHome from '../components/cardsHome.vue';
         </div>
     </section>
 
-    <section id="canchas">
+    <section id="canchas" class="h-100">
         <div class="row">
             <div class="col-10">
                 <h2 class="text-start h3"><span class="text-decoration-underline">Conocé</span> las canchas</h2>
@@ -107,7 +107,7 @@ import cardsHome from '../components/cardsHome.vue';
         </div>
     </section>
 
-    <section id="actividadReciente">
+    <section id="actividadReciente" >
         <div class="row">
             <div class="col-10">
                 <h2 class="text-start h3"><span class="text-decoration-underline">Actividad</span> reciente</h2>
@@ -119,6 +119,8 @@ import cardsHome from '../components/cardsHome.vue';
             </div>
         </div>
     </section>
+
+    <Nav />
 </template>
 
 <style scoped>
@@ -126,13 +128,13 @@ import cardsHome from '../components/cardsHome.vue';
        margin-top: 6rem;
     } */
 
-    #proximosPartidos{
+    /* #proximosPartidos{
         text-align: center;
     }
 
     #proximosPartidos div{
         align-items: center;
-    }
+    } */
 
     section{
         margin-top: 2rem;

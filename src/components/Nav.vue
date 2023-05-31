@@ -7,7 +7,7 @@ defineProps({
 </script>
 
 <template>
-        <nav class="navbar fixed-bottom bg-light">
+        <nav class="navbar sticky-bottom bg-light">
             <div class="container-fluid mx-3">
                 <div class="row justify-content-between align-items-center">
                     <a class="navbar-toggler col-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">

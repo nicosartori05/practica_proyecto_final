@@ -6,13 +6,13 @@ const flag = true;
 
 <template>
 
-  <div class="container">
+  
       
-    <main>
+    <main class="container">
         <router-view></router-view>
     </main>
 
-  </div>
+  
 
 </template>
 
