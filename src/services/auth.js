@@ -1,5 +1,5 @@
 import { auth } from "./firebase.js";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { createUser } from "./users";
 
 export async function register({
@@ -48,6 +48,13 @@ export async function register({
   }
 }
 
+/**
+ * Inicia sesión.
+ *
+ * @param {string} email
+ * @param {string} password
+ * @return {Promise<{id: string, email: string}>}
+ */
 export async function login({ email, password }) {
   try {
     const credentials = await signInWithEmailAndPassword(auth, email, password);
@@ -57,7 +64,24 @@ export async function login({ email, password }) {
       email: user.email,
     };
   } catch (err) {
-    console.error("[auth.js login()] Error al autenticar el usuario. ", err);
-    throw err;
+    let errorEmail = false;
+    let errorPassword = false;
+
+    if (err.message == "Firebase: Error (auth/wrong-password)."){
+        console.log("ERROR PASSWORD");
+        errorEmail = true;
+    }
+
+    if (err.message == "Firebase: Error (auth/user-not-found)."){
+        console.log("ERROR EMAIL");
+        errorPassword = true;
+    }
+    //console.error("[auth.js login()] Error al autenticar el usuario. ", err);
+
+    throw {
+        errorEmail,
+        errorPassword,
+    }
+    //throw err;
   }
 }
