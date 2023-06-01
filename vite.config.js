@@ -18,22 +18,22 @@ export default defineConfig({
         theme_color: "#80c833",
         icons: [
           {
-            src: "./public/icon-192x192.png",
+            src: "./public/icon/icon-192x192.png",
             sizes: "192x192",
             type: "image/png",
           },
           {
-            src: "./public/icon-256x256.png",
+            src: "./public/icon/icon-256x256.png",
             sizes: "256x256",
             type: "image/png",
           },
           {
-            src: "./public/icon-384x384.png",
+            src: "./public/icon/icon-384x384.png",
             sizes: "384x384",
             type: "image/png",
           },
           {
-            src: "./public/icon-512x512.png",
+            src: "./public/icon/icon-512x512.png",
             sizes: "512x512",
             type: "image/png",
           },
