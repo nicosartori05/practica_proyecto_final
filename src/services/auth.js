@@ -64,7 +64,24 @@ export async function login({ email, password }) {
       email: user.email,
     };
   } catch (err) {
-    console.error("[auth.js login()] Error al autenticar el usuario. ", err);
-    throw err;
+    let errorEmail = false;
+    let errorPassword = false;
+
+    if (err.message == "Firebase: Error (auth/wrong-password)."){
+        console.log("ERROR PASSWORD");
+        errorEmail = true;
+    }
+
+    if (err.message == "Firebase: Error (auth/user-not-found)."){
+        console.log("ERROR EMAIL");
+        errorPassword = true;
+    }
+    //console.error("[auth.js login()] Error al autenticar el usuario. ", err);
+
+    throw {
+        errorEmail,
+        errorPassword,
+    }
+    //throw err;
   }
 }

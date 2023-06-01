@@ -18,12 +18,27 @@
         async function handleSubmit() {
             loading.value = true;
 
-            await login({
-                ...fields.value,
-            })
-            loading.value = false;
+            try {
+                await login({
+                    ...fields.value,
+                })
+                loading.value = false;
+                router.push('/home');
+            }catch (err) {
+                console.log('[Login] Error completo: ',err);
+                
+                // if (err.errorEmail == true){
+                //     return errorEmail;
+                // }
 
-            router.push('/home');
+                // if (err.errorPassword == true){
+                //     return errorPassword;
+                // }
+                // return err;
+                
+                // console.log('[Login] Error completo: ',err);
+                // console.log('[Login] Error mensaje: ',err.message); 
+            }
         }
 
         return {
@@ -59,6 +74,9 @@
                         placeholder="E-mail"
                         v-model="fields.email"
                     >
+                    <!-- <template v-if="handleSubmit.errorEmail">
+                        <label for="email">Email incorrecto! Intentalo nuevamente.</label>
+                    </template> -->
                 </div>
                 <div class="d-flex justify-content-center">
                     <input 
@@ -68,8 +86,13 @@
                         placeholder="Contraseña"
                         v-model="fields.password"
                     >
+                    <!-- <template v-if="handleSubmit.errorPassword">
+                        <label for="password">¡Password incorrecto! Intentalo nuevamente.</label>
+                    </template> -->
                 </div>
-            
+                
+                
+
                 <button type="submit" class="btn btn-dark h-50">INICIAR SESIÓN</button>
             </form>
         </div>
@@ -86,11 +109,6 @@
 </template>
 
 <style scoped>
-    /* .container {
-        padding-right: calc(var(--bs-gutter-x) * .5);
-        padding-left: calc(var(--bs-gutter-x) * .5);
-    } */
-
     #header{
         display: flex;
         flex-direction: column;

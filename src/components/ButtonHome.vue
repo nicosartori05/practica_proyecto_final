@@ -6,7 +6,7 @@ defineProps({
 </script>
 
 <template>
-    <div class="justify-content-center">
+    <div class="justify-content-center m-auto">
         <router-link :to="`/${route}`">
           <img :src="`../src/assets/${icon}`" class="icono-card mt-1"/>
           <p>{{ route }}</p>

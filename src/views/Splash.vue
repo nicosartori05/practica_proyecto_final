@@ -8,10 +8,10 @@
         </div>
         <div class="row justify-content-around mt-5">
             <div class="col-6 boton-inicio rounded">
-                <a href="#/login" class="text-white">INICIAR SESIÓN</a>
+                <router-link to="/login" class="text-white text-decoration-none fw-semibold">INICIAR SESIÓN</router-link>
             </div>
             <div class="col-6 boton-registro rounded">
-                <a href="#/register" class="text-white">REGISTRARME</a>
+                <router-link to="/login" class="text-white text-decoration-none fw-semibold">REGISTRARME</router-link>
             </div>
         </div>
     </section>
@@ -37,7 +37,6 @@
     .background-inicio {
         background-image: url("../assets/background-inicio.jpg");
         width: 100%;
-        /* aspect-ratio: 2/1; */
         background-size: cover;
         background-position: 75% 35%;
         background-repeat: no-repeat;
