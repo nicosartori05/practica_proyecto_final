@@ -1,12 +1,15 @@
 <script setup>
 import { ref } from 'vue';
+import { Transition } from 'vue';
 const flag = true;
 
 </script>
 
 <template>
   <main class="container">
+    <Transition name="fade">
       <router-view></router-view>
+    </Transition>
   </main>
 </template>
 
@@ -20,4 +23,14 @@ const flag = true;
   main{
     grid-row: 2;
   }
+
+  .fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>
