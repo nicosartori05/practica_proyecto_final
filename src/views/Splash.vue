@@ -11,7 +11,7 @@
                 <router-link to="/login" class="text-white text-decoration-none fw-semibold">INICIAR SESIÓN</router-link>
             </div>
             <div class="col-6 boton-registro rounded">
-                <router-link to="/login" class="text-white text-decoration-none fw-semibold">REGISTRARME</router-link>
+                <router-link to="/register" class="text-white text-decoration-none fw-semibold">REGISTRARME</router-link>
             </div>
         </div>
     </section>

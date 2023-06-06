@@ -43,12 +43,14 @@ function useRegister() {
 
 <template>
   <div class="row" id="header">
-    <div class="col-2 text-center">
+    <div class="col-4 d-flex justify-content-center">
       <router-link :to="`/login`"
-        ><i class="fi fi-sr-angle-left"></i
+        >
+        <img src="../assets/flecha-izquierda.png" />
+        <i class="fi fi-sr-angle-left"></i
       ></router-link>
     </div>
-    <div class="col-10">
+    <div class="col-6">
       <h2 class="px-4 m-5">Registrarme</h2>
     </div>
   </div>
@@ -56,6 +58,7 @@ function useRegister() {
   <div class="row">
     <div class="col-xs">
       <form action="#" method="post" @submit.prevent="handleSubmit" class="p-4">
+        <h3 class="text-start">Tus Datos</h3>
         <div class="row text-center">
           <div class="col-xs-12 col-sm-12 col-md-6">
             <input type="text" id="nombre" name="nombre" placeholder="Nombre" v-model="fields.nombre" />
@@ -85,7 +88,7 @@ function useRegister() {
             </div>
             <div class="col-xs-12 col-sm-12 col-md-10">
               <select name="nivel" id="nivel" v-model="fields.nivel">
-                <option value="" disabled>seleccionar</option>
+                <option value="" disabled>Seleccionar</option>
                 <option value="alto">Alto</option>
                 <option value="medio">Medio</option>
                 <option value="bajo">Bajo</option>
@@ -95,11 +98,11 @@ function useRegister() {
 
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-2">
-              <label for="genero">Genero:</label>
+              <label for="genero">Género:</label>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-10">
               <select name="genero" id="genero" v-model="fields.genero">
-                <option value="" disabled>seleccionar</option>
+                <option value="" disabled>Seleccionar</option>
                 <option value="Masculino">Masculino</option>
                 <option value="Femenino">Femenino</option>
                 <option value="Prefiero no decir">Prefiero no decir</option>
@@ -109,11 +112,11 @@ function useRegister() {
 
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-2">
-              <label for="pais">Pais:</label>
+              <label for="pais">País:</label>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-10">
               <select name="pais" id="pais" v-model="fields.pais">
-                <option value="" disabled>seleccionar</option>
+                <option value="" disabled>Seleccionar</option>
                 <option value="Argentina">Argentina</option>
                 <option value="Uruguay">Uruguay</option>
               </select>
@@ -126,8 +129,8 @@ function useRegister() {
             </div>
             <div class="col-xs-12 col-sm-12 col-md-10">
               <select name="ciudad" id="ciudad" v-model="fields.ciudad">
-                <option value="" disabled>seleccionar</option>
-                <option value="Buenos Aires">buenos aires</option>
+                <option value="" disabled>Seleccionar</option>
+                <option value="Buenos Aires">Buenos Aires</option>
                 <!-- <option value=""></option> -->
               </select>
             </div>
@@ -139,7 +142,7 @@ function useRegister() {
             </div>
             <div class="col-xs-12 col-sm-12 col-md-10">
               <select name="barrio" id="barrio" v-model="fields.barrio">
-                <option value="" disabled>seleccionar</option>
+                <option value="" disabled>Seleccionar</option>
                 <option value="Palermo">Palermo</option>
                 <option value="Recoleta">Recoleta</option>
               </select>
@@ -148,7 +151,7 @@ function useRegister() {
 
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-2">
-              <label for="telefono">Telefono:</label>
+              <label for="telefono">Teléfono:</label>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-10">
               <input type="text" placeholder="+54" name="telefono" v-model="fields.telefono"/>
@@ -161,7 +164,7 @@ function useRegister() {
             </div>
             <div class="col-xs-10 col-sm-10 col-md-8">
               <label for=""
-                >Acepto los <a href="">terminos y condiciones</a> de uso.</label
+                >Acepto los <a href="">términos y condiciones</a> de uso.</label
               >
             </div>
           </div>

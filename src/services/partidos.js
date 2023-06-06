@@ -4,22 +4,21 @@ import { db } from "./firebase";
 export async function cargarPartido(data/*{nombre, complejo, fecha, hora, cantidadJ, cambios, tipo, valorCancha}*/) {
     const partidoRef = collection(db, "partidos");
 
-    try {
-        await addDoc(partidoRef, {
-            ...data,
-            // nombre,
-            // complejo,
-            // fecha,
-            // hora,
-            // cantidadJ,
-            // cambios,
-            // tipo,
-            // valorCancha,
-            created_at: serverTimestamp(),
+    return addDoc(partidoRef, {
+        ...data,
+        // nombre,
+        // complejo,
+        // fecha,
+        // hora,
+        // cantidadJ,
+        // cambios,
+        // tipo,
+        // valorCancha,
+        created_at: serverTimestamp(),
+    })  
+        .then(()=>null)
+        .catch(err => {
+            console.error("[partidos.js cargaPartido] Ocurrió un error al cargar el partido.", err);
+            throw err;
         });
-        return null;
-    } catch (err) {
-        console.error("[partidos.js cargaPartido] Ocurrió un error al cargar el partido.", err);
-        throw err;
-    }
 }
