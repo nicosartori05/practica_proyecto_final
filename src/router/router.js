@@ -4,12 +4,14 @@ import Splash from '../views/Splash.vue'
 import Home from '../views/Home.vue'
 import Register from '../views/Register.vue'
 import Login from '../views/Login.vue'
+import CargaPartido from "../views/CargaPartido.vue";
 
 const routes = [
-    {path:"/", component: Splash},
+    {path:"/",                  component: Splash},
     {path:"/home",              component: Home},
-    {path:"/register",      component: Register},
-    {path:"/login",         component: Login},
+    {path:"/register",          component: Register},
+    {path:"/login",             component: Login},
+    {path:"/carga-partidos",    component: CargaPartido},
     // {path:"/feed",          component: Feed},
     // {path:"/partidos",      component: Partidos},
     // {path:"/red",           component: Red},

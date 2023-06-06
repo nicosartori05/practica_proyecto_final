@@ -17,7 +17,9 @@ defineProps({
                     <a class="col-2"><img src="../assets/sobre.png" alt="Sobre para mandar mensajes" class="icono-nav" /></a>
                     
                     <div class="col-2 fondo-plus rounded">
-                        <a><img src="../assets/plus.png" alt="Icono de agregar partido" class="icono-nav-plus" /></a>
+                        <router-link :to="`/carga-partidos`">
+                            <img src="../assets/plus.png" alt="Icono de agregar partido" class="icono-nav-plus" />
+                        </router-link>
                     </div>
     
                     <a class="col-2"><img src="../assets/campanas.png" alt="Campanas de notificaciones" class="icono-nav" /></a>
