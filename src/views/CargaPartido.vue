@@ -9,7 +9,6 @@ const {fields, loading, handleSubmit} = useCargaPartido();
 
 function useCargaPartido() {
     const router = useRouter();
-
     const fields = ref({
         nombre: "",
         complejo: "",
@@ -50,7 +49,7 @@ function useCargaPartido() {
     <div class="row">
         <form
             action="#"
-            method="POST"
+            method="get"
             @submit="handleSubmit"
         >
             <h3 class="mb-3">Datos del partido</h3>

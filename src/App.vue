@@ -8,7 +8,9 @@ const flag = true;
 <template>
   <main class="container">
     <Transition name="fade">
-      <router-view></router-view>
+      <div>
+        <router-view></router-view>
+      </div>
     </Transition>
   </main>
 </template>

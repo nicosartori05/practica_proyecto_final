@@ -3,8 +3,9 @@ import { db } from "./firebase";
 
 export async function cargarPartido(data/*{nombre, complejo, fecha, hora, cantidadJ, cambios, tipo, valorCancha}*/) {
     const partidoRef = collection(db, "partidos");
+    const newPartidoRef = doc(partidoRef);
 
-    return addDoc(partidoRef, {
+    return setDoc(newPartidoRef, {
         ...data,
         // nombre,
         // complejo,
